@@ -1,6 +1,7 @@
-
+# dbt generated files
 target/
-dbt_packages/
 logs/
-.env
-fred_dbt/profiles.yml
+dbt_packages/
+
+# Local dbt profile / credentials
+profiles.yml
