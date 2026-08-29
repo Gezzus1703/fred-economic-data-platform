@@ -1,0 +1,20 @@
+[project]
+name = "dbt-fred-economic-data-platform"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Michał Sitarz", email = "michal.sitarz1703@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.12.3",
+    "dbt-snowflake>=1.12.0",
+]
+
+[project.scripts]
+dbt-fred-economic-data-platform = "dbt_fred_economic_data_platform:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
