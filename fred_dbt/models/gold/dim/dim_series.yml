@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_series
+    columns:
+      - name: series_key
+        data_tests:
+          - not_null
+          - unique
+      - name: series_id
+        data_tests:
+          - not_null
+          - unique

@@ -1,0 +1,20 @@
+sources:
+  - name: bronze
+    database: FRED_DB
+    schema: BRONZE
+    tables:
+      - name: fred_observations_raw
+        identifier: FRED_OBSERVATIONS_RAW
+        columns:
+          - name: RAW_RECORD
+            data_tests:
+              - not_null
+          - name: SOURCE_FILE
+            data_tests:
+              - not_null 
+          - name: SOURCE_FILE_ROW_NUMBER
+            data_tests:
+              - not_null 
+          - name: LOADED_AT
+            data_tests:
+              - not_null 

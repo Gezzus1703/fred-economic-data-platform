@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_fred_observations
+
+    columns:
+      - name: series_id
+        data_tests:
+          - not_null
+
+      - name: observation_date
+        data_tests:
+          - not_null
+
+      - name: observation_value
+
+      - name: realtime_start
+        data_tests:
+          - not_null
+
+      - name: realtime_end
+        data_tests:
+          - not_null
+
+      - name: ingested_at
+        data_tests:
+          - not_null
+
+      - name: source_file
+        data_tests:
+          - not_null
+
+      - name: source_file_row_number
+        data_tests:
+          - not_null
+
+      - name: loaded_at
+        data_tests:
+          - not_null

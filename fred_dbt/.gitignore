@@ -5,3 +5,8 @@ dbt_packages/
 
 # Local dbt profile / credentials
 profiles.yml
+.user.yml
+dbt_internal_packages/
+
+# VS Code
+.vscode/
