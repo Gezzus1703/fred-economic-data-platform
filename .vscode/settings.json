@@ -1,3 +1,4 @@
 {
-    "dbt.perspectiveTheme": "Pro Dark"
+    "dbt.perspectiveTheme": "Pro Dark",
+    "dbt.dbtMajorVersion": "v1"
 }
