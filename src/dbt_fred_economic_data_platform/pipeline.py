@@ -1,6 +1,9 @@
 import os
+import subprocess
+import time
 from datetime import UTC, datetime
 from io import BytesIO
+from pathlib import Path
 
 import boto3
 import pandas as pd
@@ -132,6 +135,34 @@ def main():
         f"Uploaded to "
         f"s3://{bucket_name}/{s3_key}"
     )
+
+    print("Waiting 30 seconds for Snowpipe...")
+    time.sleep(30)
+
+    repository_root = (
+        Path(__file__).resolve().parents[2]
+    )
+
+    dbt_project_dir = (
+        repository_root / "fred_dbt"
+    )
+
+    subprocess.run(
+        [
+            "uv",
+            "run",
+            "dbt",
+            "build",
+            "--project-dir",
+            str(dbt_project_dir),
+            "--select",
+            "+fact_economic_observations",
+        ],
+        cwd=repository_root,
+        check=True,
+    )
+
+    print("Pipeline completed successfully.")
 
 
 if __name__ == "__main__":
